@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Website</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #circleContainer {
+            position: relative;
+            text-align: center;
+        }
+
+        #circleImage {
+            width: 200px; /* Adjust the width as needed */
+            height: auto;
+        }
+
+        #randomNumber {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div id="circleContainer">
+    <!-- Assuming the image is in the same directory as your HTML file -->
+    <img id="circleImage" src="https://scpic.chinaz.net/files/pic/flash2/202212/zflash491.jpg" alt="Circle Image">
+    <p id="randomNumber"></p>
+</div>
+
+<script>
+    // Function to generate a random 4-digit number
+    function generateRandomNumber() {
+        return Math.floor(1000 + Math.random() * 9000);
+    }
+
+    // Wait for the image to load
+    document.getElementById('circleImage').onload = function() {
+        // Generate a random number
+        var randomNum = generateRandomNumber();
+
+        // Display the random number in the webpage
+        document.getElementById('randomNumber').innerText = randomNum;
+    };
+</script>
+
+</body>
+</html>
